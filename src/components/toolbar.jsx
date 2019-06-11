@@ -10,7 +10,7 @@ const Toolbar = (props) => {
             <div className='container'>
                 <div className='navbar-brand'>
                     <a className='navbar-item' href={SERVER.homepage}>
-                        <img src={logo} alt={SERVER.config.description} width='50' height='50' />
+                        <img className='is-clipped' src={logo} alt={SERVER.config.description} width='50' height='50' />
                     </a>
                     <div className='navbar-item'>{SERVER.config.displayName}</div>
 

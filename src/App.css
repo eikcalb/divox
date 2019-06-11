@@ -1,5 +1,5 @@
-.App {
-    text-align: center;
+.app {
+    height: 100%;
 }
 
 .App-logo {
@@ -45,4 +45,14 @@ article {
 
 .has-navbar-fixed-top {
     padding-top: 3.25rem
+}
+
+.notification.notification-element {
+    position: absolute;
+    margin: 4pc;
+}
+
+.content-scrollable {
+    overflow: auto;
+    height: inherit;
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import { SERVER } from '../App';
 
-const Footer = () => {
+const Footer = ({ className }) => {
     return (
-        <footer className='footer' >
-            <div >
-                &COPY; {SERVER.config.author} {new Date().getFullYear()}
+        <footer className={`${className || ''} has-text-centered`} >
+            <div class='section'>
+                &copy; {SERVER.config.author} {new Date().getFullYear()}
             </div>
         </footer>
     )

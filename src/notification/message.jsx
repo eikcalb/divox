@@ -42,12 +42,17 @@ export default class Message {
 
 export function Element(props) {
     if (typeof props.message.options.timeout === 'number') {
-        setTimeout(props.onClose, Math.max(0, props.message.options.timeout))
+        let timeoutID = setTimeout(props.onClose, Math.max(0, props.message.options.timeout))
+        React.useEffect(() => () => {
+            clearTimeout(timeoutID)
+        })
+
     }
+
     if (props.message.onshow) props.message.onshow()
 
     return (
-        <div style={{ position: 'absolute', top: 0 }} className="notification is-info">
+        <div style={{ position: 'absolute', top: 0 }} className="notification is-info notification-element">
             <button onClick={props.onClose} className="delete"></button>
             {props.message.message}
         </div>
@@ -63,14 +68,13 @@ export const context = React.createContext({})
  * @todo Support multiple notifications to be shown. Current impementation only didplays one notification at a time
  */
 export function EventManager(props) {
-    let [events, updateEvents] = React.useState({})
+    let [events, updateEvents] = React.useState(null)
     let remove = (eventId) => {
-        updateEvents({})
+        updateEvents(null)
     }
     let addEvent = (event) => {
         updateEvents(event)
     }
-    console.log(events)
 
     return (
         <context.Provider value={{ add: addEvent }}>
@@ -78,9 +82,9 @@ export function EventManager(props) {
             {/* {Object.values(events).map(event => (
                 <Element message={event} key={event.id} onClose={() => remove(event.id)} />
             ))} */}
-            {
+            {events ?
                 <Element message={events} onClose={() => remove()} />
-            }
+                : null}
         </context.Provider>
     )
 }

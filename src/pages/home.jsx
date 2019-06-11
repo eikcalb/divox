@@ -3,8 +3,13 @@ import Toolbar from '../components/toolbar'
 import { ThemeContext } from '../components/theme';
 import Footer from '../components/footer';
 import Banner from '../components/banner';
+import Card from '../components/card';
 
 // export const ThemeContext = React.createContext('dark')
+
+ const Content = (props)=>{
+   
+ }
 
 /**
  * Home is the homepage of the application.
@@ -14,16 +19,18 @@ class Home extends Component {
 
   render() {
     return (
-      <section className={`${this.context} has-navbar-fixed-top`}>
+      <section className={`${this.context} app has-navbar-fixed-top`}>
         <Toolbar />
-        <Banner />
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>
-            Homepage
-          </p>
-        </header>
-        <Footer />
+        <div className='content-scrollable'>
+          <Banner />
+          <div className='container'>
+            <Card title='What we do' >
+              <div className='title'>Homepage</div>
+            </Card>
+          </div>
+          </header>
+          <Footer />
+        </div>
       </section>
     );
   }
