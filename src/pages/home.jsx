@@ -7,9 +7,9 @@ import Card from '../components/card';
 
 // export const ThemeContext = React.createContext('dark')
 
- const Content = (props)=>{
-   
- }
+const Content = (props) => {
+
+}
 
 /**
  * Home is the homepage of the application.
@@ -28,7 +28,6 @@ class Home extends Component {
               <div className='title'>Homepage</div>
             </Card>
           </div>
-          </header>
           <Footer />
         </div>
       </section>

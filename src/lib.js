@@ -1,15 +1,15 @@
 const DEFAULT_CONFIG = {
-    appName: "Divox",
+    appName: "Comfi",
     version: `0.0.1`,
     author: "eikcalb",
-    description: "Divox Consult"
+    description: "Comfi Webapp"
 }
 
 /**
  * Server defines required functionality for interacting with a backend infrastructure.
  */
 export class Server {
-    config = null
+    config = DEFAULT_CONFIG
     homepage = 'https://eikcalb.dev'
 
     /**
@@ -18,7 +18,6 @@ export class Server {
      * @param {any} appConfig 
      */
     constructor(appConfig) {
-        this.config = DEFAULT_CONFIG
         if (appConfig) {
             if (typeof appConfig !== 'object') {
                 throw new TypeError("Parameter `appConfig` must be an object instance")

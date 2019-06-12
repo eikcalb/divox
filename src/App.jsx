@@ -10,8 +10,8 @@ import { EventManager } from './notification/message';
 
 
 export const SERVER = new Server({
-    description: `Divox is an application for the company page of Divox Consult. This displays the activities of the company and includes a blogging platform to showcase their resources.`,
-    displayName: `Divox Consult`
+    description: `Comfi is a financial management software.`,
+    displayName: `Comfi`
 })
 
 /**
