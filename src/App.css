@@ -47,6 +47,22 @@ article {
     padding-top: 3.25rem
 }
 
+.navbar-item.is-tab {
+    border: none
+}
+
+.navbar-burger span {
+    height: 2px;
+}
+
+.navbar-burger span:nth-child(1) {
+    top: calc(50% - 7px);
+}
+
+.navbar-burger.is-active span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+}
+
 .notification.notification-element {
     position: absolute;
     margin: 4pc;

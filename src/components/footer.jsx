@@ -4,7 +4,7 @@ import { SERVER } from '../App';
 const Footer = ({ className }) => {
     return (
         <footer className={`${className || ''} has-text-centered`} >
-            <div class='section'>
+            <div className='section'>
                 &copy; {SERVER.config.author} {new Date().getFullYear()}
             </div>
         </footer>

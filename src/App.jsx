@@ -10,7 +10,7 @@ import { EventManager } from './notification/message';
 
 
 export const SERVER = new Server({
-    description: `Comfi is a financial management software.`,
+    description: `Comfi is a financial management software built to seamlessly integrate various financial channels and provide intuitive interfaces for users.`,
     displayName: `Comfi`
 })
 

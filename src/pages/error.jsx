@@ -15,11 +15,11 @@ export const Error = (props) => {
             <div className='hero-body'>
               <div className='container'>
                 <h1 className='title is-uppercase is-size-4-mobile'>Error!</h1>
-                <p className='subtitle is-size-6-mobile'>We're sorry, the page you requested could not be found.</p>
-                <Link className={'button is-success is-outlined'} to={'/'} >Back To Home</Link>
+                <p className='subtitle is-size-6-mobile'>We're sorry,but the page you requested could not be found.</p>
+                <Link className={'button is-link is-outlined'} to={'/'} >Back To Home</Link>
               </div>
             </div>
-              <Footer className='hero-foot' />
+            <Footer className='hero-foot' />
           </section>
         )
       }}

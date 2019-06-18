@@ -12,8 +12,7 @@ export default function Banner(props) {
             <div className='hero-content'>
                 {props.slides ?
                     <>
-                        <button className='button is-small' onClick={() => setCurrent(normalizeNext(current - 1))}>prev</button>
-                        <button className='button is-small' onClick={() => setCurrent(normalizeNext(current + 1))}>next</button>
+                        {props.slides[current]}
                         {props.slides.length > 1 ?
                             <>
                                 <button className='button is-small is-pulled-left' onClick={() => setCurrent(normalizeNext(current - 1, props.slides.length))}>prev</button>
@@ -34,13 +33,21 @@ function normalizeNext(next, size, shouldLoop = true) {
     }
     if (next < size) {
         if (next < 0 && shouldLoop) {
+            console.table({ wanted: next, got: (size + next) % size, size })
+
             return (size + next) % size
         }
+        console.table({ wanted: next, got: next, size })
+
         return next
     } else {
         if (shouldLoop) {
+            console.table({ wanted: next, got: next % size, size })
+
             return next % size
         } else {
+            console.table({ wanted: next, got: size - 1, size })
+
             return size - 1
         }
     }
